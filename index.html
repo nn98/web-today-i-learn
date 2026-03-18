@@ -1,20 +1,80 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
+    <style>
+      .mbti-wrapper {
+        padding: 10px 0;
+        max-width: 350px;
+      }
+      .mbti-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        gap: 12px;
+      }
+      .mbti-row:last-child {
+        margin-bottom: 0;
+      }
+      .mbti-label {
+        font-size: 16px;
+        font-weight: 800;
+        width: 20px;
+        text-align: center;
+        transition: color 0.3s;
+      }
+      .mbti-bar-bg {
+        flex-grow: 1;
+        height: 12px;
+        background-color: #e9ecef;
+        border-radius: 6px;
+        display: flex;
+        overflow: hidden;
+      }
+      .mbti-bar-fill {
+        height: 100%;
+        border-radius: 6px;
+        width: 0%;
+        transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .color-ei { background-color: #4dabf7; }
+      .color-sn { background-color: #51cf66; }
+      .color-tf { background-color: #ff922b; }
+      .color-jp { background-color: #cc5de8; }
+
+      .mbti-active { color: #212529; }
+      .mbti-inactive { color: #adb5bd; font-weight: 400; }
+    </style>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
-    <!-- TODO: Open Graph 메타 태그를 설정하세요 -->
-    <!-- <meta property="og:title" content="페이지 제목" /> -->
-    <!-- <meta property="og:description" content="페이지 설명" /> -->
-    <!-- <meta property="og:image" content="./images/thumbnail.jpg" /> -->
+     <meta property="og:title" content="TIL" />
+     <meta property="og:description" content="우테코 8기 BE" />
+     <meta property="og:image" content="./images/thumbnail.jpg" />
 
     <title>Today I Learn</title>
     <link rel="stylesheet" href="./css/main.css" />
     <script src="./js/index.js" defer></script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-    <!-- 상단 내비게이션 -->
     <nav class="top-nav">
       <span class="nav-logo">My Page</span>
       <ul class="nav-links">
@@ -25,63 +85,97 @@
       </ul>
     </nav>
 
-    <!-- 프로필 히어로 -->
     <section class="hero" id="about">
       <div class="profile-card">
         <div class="profile-image">
-          <!-- TODO: 프로필 이미지를 넣어주세요 -->
-          <!-- <img src="./images/profile.jpg" alt="프로필 사진" /> -->
+           <img src="./images/profile.png" alt="프로필 사진" />
         </div>
         <div class="profile-info">
-          <h1>닉네임</h1>
-          <p class="tagline">한 줄 소개를 작성해주세요.</p>
+          <h1>글렌</h1>
+          <p class="tagline">하고 싶은 일을 하기</p>
         </div>
       </div>
     </section>
 
     <main>
-      <!-- 자기소개 -->
       <section class="content-section">
         <h2>자기소개</h2>
-        <p>자기소개를 작성해주세요.</p>
-        <!-- TODO: 소개 글 안에 블로그, GitHub 등 관련 링크를 <a> 태그로 연결하세요 -->
+        <p>
+          <a href="https://velog.io/@nn98" target="_blank" >
+            <img src="https://img.shields.io/badge/Velog-20C997?style=platic&logo=Velog&logoColor=white"/>
+          </a>
+          <a href="https://github.com/nn98" target="_blank" >
+            <img src="https://img.shields.io/badge/Github-444444?style=platic&logo=GitHub&logoColor=white"/>
+          </a>
+        </p>
+        <p>
+          통학길이 멀어 슬픈 경기도민
+        </p>
       </section>
 
-      <!-- 기본 정보 -->
       <section class="content-section" id="info">
         <h2>기본 정보</h2>
-        <!-- TODO: 자신의 기본 정보를 표(<table>)로 정리하세요 -->
         <table class="info-table">
           <tr>
             <th>이름</th>
-            <td></td>
+            <td colspan="5">김윤서</td>
           </tr>
           <tr>
             <th>MBTI</th>
-            <td></td>
+            <td colspan="5">
+              <div class="mbti-wrapper">
+                <div class="mbti-row" id="row-ei">
+                  <span class="mbti-label left">E</span>
+                  <div class="mbti-bar-bg"><div class="mbti-bar-fill color-ei"></div></div>
+                  <span class="mbti-label right">I</span>
+                </div>
+                <div class="mbti-row" id="row-sn">
+                  <span class="mbti-label left">S</span>
+                  <div class="mbti-bar-bg"><div class="mbti-bar-fill color-sn"></div></div>
+                  <span class="mbti-label right">N</span>
+                </div>
+                <div class="mbti-row" id="row-tf">
+                  <span class="mbti-label left">T</span>
+                  <div class="mbti-bar-bg"><div class="mbti-bar-fill color-tf"></div></div>
+                  <span class="mbti-label right">F</span>
+                </div>
+                <div class="mbti-row" id="row-jp">
+                  <span class="mbti-label left">J</span>
+                  <div class="mbti-bar-bg"><div class="mbti-bar-fill color-jp"></div></div>
+                  <span class="mbti-label right">P</span>
+                </div>
+              </div>
+            </td>
           </tr>
           <tr>
             <th>취미</th>
-            <td></td>
+            <td>영화 감상(3배속)</td>
+            <td>성심당 스피드런</td>
+            <td>증류주 수집</td>
+            <td>자전거</td>
+            <td>요리</td>
           </tr>
           <tr>
             <th>좋아하는 음식</th>
-            <td></td>
+            <td>위스키</td>
+            <td>브랜디</td>
+            <td>리큐르</td>
+            <td>칵테일</td>
+            <td>연어</td>
           </tr>
         </table>
       </section>
 
-      <!-- 나만의 갤러리 -->
       <section class="content-section" id="gallery">
-        <h2>나만의 갤러리</h2>
-        <p class="section-desc">갤러리 부제를 작성해주세요. (예: 기억에 남는 여행지)</p>
+        <h2>성심당 갤러리</h2>
+        <p class="section-desc">그나마 볼만하게 찍힌 사진들</p>
         <div class="gallery-grid">
-          <!-- TODO: 9장의 이미지를 배치하세요 -->
-          <!--
-          <img src="./images/gallery-1.jpg" alt="갤러리 이미지 1" />
-          <img src="./images/gallery-2.jpg" alt="갤러리 이미지 2" />
-          ...
-          -->
+          <img src="./images/gallery-00.jpg" alt="갤러리 이미지 1" />
+          <img src="./images/gallery-01.jpg" alt="갤러리 이미지 2" />
+          <img src="./images/gallery-02.jpg" alt="갤러리 이미지 2" />
+          <img src="./images/gallery-03.jpg" alt="갤러리 이미지 2" />
+          <img src="./images/gallery-04.jpg" alt="갤러리 이미지 2" />
+          <img src="./images/gallery-05.jpg" alt="갤러리 이미지 2" />
         </div>
       </section>
 
@@ -93,22 +187,34 @@
           <!-- TODO: 작품 중 하나는 <video> 또는 <iframe>으로 영상을 삽입하세요 -->
           <article class="work-card">
             <div class="work-thumbnail">
-              <!-- 작품 이미지 -->
+              <img src="https://an2-img.amz.wtchn.net/image/v2/zWCQ2_cCSwDTvqcfTy7V-A.webp?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMMlpyYkhscWMyNXliV3B3YW5SMmJ6azRhMlpySW4wLjl5YzJULUJ3Q1J1YlU5QnNFQ25xd3R3Qjg2bDd0M0FiU181Wmx3NkRwZk0=" alt="나저씨">
             </div>
             <div class="work-info">
-              <h3>작품 제목</h3>
-              <p>작품에 대한 설명을 작성해주세요.</p>
+              <h3>나의 아저씨 (2018)</h3>
+              <p>삶의 무게를 버티며 살아가는 아저씨 삼 형제와 거칠게 살아온 한 여성이 서로를 통해 삶을 치유하게 되는 이야기를 그린 드라마</p>
+              <p></p>
+              <p></p>
+              <p>- pedia.watcha</p>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-video">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/A33AdB4u8GQ?si=VdFY_kZE7KGOK_7b" frameborder="0"
+                      allowfullscreen></iframe>
+            </div>
+            <div class="work-info">
+              <h2>헤어질 결심 (2022)</h2>
+              <p>직접 보시죠</p>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- TIL (Today I Learned) -->
       <section class="content-section" id="til">
         <h2>TIL</h2>
         <p class="section-desc">오늘 새롭게 배운 것들을 기록합니다.</p>
 
-        <!-- TIL 작성 폼 -->
         <form class="til-form" id="til-form">
           <div class="form-group">
             <label for="til-date">날짜</label>
@@ -128,9 +234,7 @@
           </div>
         </form>
 
-        <!-- TIL 목록: 폼으로 등록하면 여기에 항목이 추가됩니다 -->
         <div class="til-list" id="til-list">
-          <!-- 아래는 예시 항목입니다. 자유롭게 수정하거나 삭제하세요 -->
           <article class="til-item">
             <time>2026-03-15</time>
             <h3>HTML 시멘틱 태그</h3>
@@ -144,5 +248,48 @@
     <footer>
       <p>&copy; My Page</p>
     </footer>
+
+    <script>
+      const mbtiData = {
+        EI: 15,
+        SN: 50,
+        TF: 95,
+        JP: 50
+      };
+
+      function renderMBTI(id, leftPercent) {
+        const row = document.getElementById(id);
+        if (!row) return;
+
+        const bar = row.querySelector('.mbti-bar-fill');
+        const labelLeft = row.querySelector('.mbti-label.left');
+        const labelRight = row.querySelector('.mbti-label.right');
+
+        let targetWidth = 0;
+
+        if (leftPercent >= 50) {
+          labelLeft.className = 'mbti-label left mbti-active';
+          labelRight.className = 'mbti-label right mbti-inactive';
+          bar.style.marginLeft = '0';
+          targetWidth = leftPercent;
+        } else {
+          labelLeft.className = 'mbti-label left mbti-inactive';
+          labelRight.className = 'mbti-label right mbti-active';
+          bar.style.marginLeft = 'auto';
+          targetWidth = 100 - leftPercent;
+        }
+
+        setTimeout(() => {
+          bar.style.width = targetWidth + '%';
+        }, 100);
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+        renderMBTI('row-ei', mbtiData.EI);
+        renderMBTI('row-sn', mbtiData.SN);
+        renderMBTI('row-tf', mbtiData.TF);
+        renderMBTI('row-jp', mbtiData.JP);
+      });
+    </script>
   </body>
 </html>
