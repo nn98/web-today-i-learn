@@ -1,74 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <style>
-      .mbti-wrapper {
-        padding: 10px 0;
-        max-width: 350px;
-      }
-      .mbti-row {
-        display: flex;
-        align-items: center;
-        margin-bottom: 12px;
-        gap: 12px;
-      }
-      .mbti-row:last-child {
-        margin-bottom: 0;
-      }
-      .mbti-label {
-        font-size: 16px;
-        font-weight: 800;
-        width: 20px;
-        text-align: center;
-        transition: color 0.3s;
-      }
-      .mbti-bar-bg {
-        flex-grow: 1;
-        height: 12px;
-        background-color: #e9ecef;
-        border-radius: 6px;
-        display: flex;
-        overflow: hidden;
-      }
-      .mbti-bar-fill {
-        height: 100%;
-        border-radius: 6px;
-        width: 0%;
-        transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .color-ei { background-color: #4dabf7; }
-      .color-sn { background-color: #51cf66; }
-      .color-tf { background-color: #ff922b; }
-      .color-jp { background-color: #cc5de8; }
-
-      .mbti-active { color: #212529; }
-      .mbti-inactive { color: #adb5bd; font-weight: 400; }
-    </style>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
      <meta property="og:title" content="TIL" />
      <meta property="og:description" content="우테코 8기 BE" />
      <meta property="og:image" content="./images/thumbnail.jpg" />
 
-    <title>Today I Learn</title>
+    <title>출퇴근길에 차 안막히길</title>
     <link rel="stylesheet" href="./css/main.css" />
     <script src="./js/index.js" defer></script>
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
@@ -102,10 +57,10 @@
         <h2>자기소개</h2>
         <p>
           <a href="https://velog.io/@nn98" target="_blank" >
-            <img src="https://img.shields.io/badge/Velog-20C997?style=platic&logo=Velog&logoColor=white"/>
+            <img src="https://img.shields.io/badge/Velog-20C997?style=platic&logo=Velog&logoColor=white" alt="Velog" />
           </a>
           <a href="https://github.com/nn98" target="_blank" >
-            <img src="https://img.shields.io/badge/Github-444444?style=platic&logo=GitHub&logoColor=white"/>
+            <img src="https://img.shields.io/badge/Github-444444?style=platic&logo=GitHub&logoColor=white" alt="Github" />
           </a>
         </p>
         <p>
@@ -183,8 +138,6 @@
       <section class="content-section" id="works">
         <h2>나를 울린 인생 작품</h2>
         <div class="works-list">
-          <!-- TODO: 최소 2가지 작품을 소개하세요 -->
-          <!-- TODO: 작품 중 하나는 <video> 또는 <iframe>으로 영상을 삽입하세요 -->
           <article class="work-card">
             <div class="work-thumbnail">
               <img src="https://an2-img.amz.wtchn.net/image/v2/zWCQ2_cCSwDTvqcfTy7V-A.webp?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMMlpyYkhscWMyNXliV3B3YW5SMmJ6azRhMlpySW4wLjl5YzJULUJ3Q1J1YlU5QnNFQ25xd3R3Qjg2bDd0M0FiU181Wmx3NkRwZk0=" alt="나저씨">
@@ -200,8 +153,8 @@
 
           <article class="work-card">
             <div class="work-video">
-              <iframe width="100%" height="315" src="https://www.youtube.com/embed/A33AdB4u8GQ?si=VdFY_kZE7KGOK_7b" frameborder="0"
-                      allowfullscreen></iframe>
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/A33AdB4u8GQ?si=VdFY_kZE7KGOK_7b"
+                      allowfullscreen title="헤결"></iframe>
             </div>
             <div class="work-info">
               <h2>헤어질 결심 (2022)</h2>
@@ -248,48 +201,5 @@
     <footer>
       <p>&copy; My Page</p>
     </footer>
-
-    <script>
-      const mbtiData = {
-        EI: 15,
-        SN: 50,
-        TF: 95,
-        JP: 50
-      };
-
-      function renderMBTI(id, leftPercent) {
-        const row = document.getElementById(id);
-        if (!row) return;
-
-        const bar = row.querySelector('.mbti-bar-fill');
-        const labelLeft = row.querySelector('.mbti-label.left');
-        const labelRight = row.querySelector('.mbti-label.right');
-
-        let targetWidth = 0;
-
-        if (leftPercent >= 50) {
-          labelLeft.className = 'mbti-label left mbti-active';
-          labelRight.className = 'mbti-label right mbti-inactive';
-          bar.style.marginLeft = '0';
-          targetWidth = leftPercent;
-        } else {
-          labelLeft.className = 'mbti-label left mbti-inactive';
-          labelRight.className = 'mbti-label right mbti-active';
-          bar.style.marginLeft = 'auto';
-          targetWidth = 100 - leftPercent;
-        }
-
-        setTimeout(() => {
-          bar.style.width = targetWidth + '%';
-        }, 100);
-      }
-
-      window.addEventListener('DOMContentLoaded', () => {
-        renderMBTI('row-ei', mbtiData.EI);
-        renderMBTI('row-sn', mbtiData.SN);
-        renderMBTI('row-tf', mbtiData.TF);
-        renderMBTI('row-jp', mbtiData.JP);
-      });
-    </script>
   </body>
 </html>
