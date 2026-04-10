@@ -7,7 +7,9 @@ crew_id, nickname
 #### 2.
 crew_id, nickname, primary key(crew_id)
 #### 3.
+```
 SELECT DISTINCT crew_id, nickname FROM attendance;
+```
 #### 4.
 ```
 CREATE TABLE crew (  
