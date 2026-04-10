@@ -24,6 +24,8 @@ INSERT INTO crew (crew_id, nickname)
 SELECT DISTINCT crew_id, nickname FROM attendance;
 ```
 
+---
+
 ## 문제 2: 테이블 컬럼 삭제하기 (ALTER TABLE)
 
 #### 1.
@@ -33,6 +35,8 @@ nickname
 ALTER TABLE attendance DROP COLUMN nickname;
 ```
 
+---
+
 ## 문제 3: 외래키 설정하기
 
 #### 1.
@@ -40,6 +44,8 @@ ALTER TABLE attendance DROP COLUMN nickname;
 ALTER TABLE attendance 
 ADD CONSTRAINT fk_crew_id FOREIGN KEY (crew_id) REFERENCES crew(crew_id);
 ```
+
+---
 
 ## 문제 4: 유니크 키 설정
 
@@ -58,6 +64,8 @@ ADD CONSTRAINT unique_nickname UNIQUE (nickname);
 SELECT * FROM crew WHERE nickname LIKE '디%';
 ```
 
+---
+
 ## 문제 6: 출석 기록 확인하기 (SELECT + WHERE)
 
 #### 1.
@@ -66,6 +74,8 @@ SELECT * FROM attendance
 WHERE crew_id = 13 AND attendance_date = '2025-03-06';
 ```
 
+---
+
 ## 문제 7: 누락된 출석 기록 추가 (INSERT)
 
 #### 1.
@@ -73,6 +83,8 @@ WHERE crew_id = 13 AND attendance_date = '2025-03-06';
 INSERT INTO attendance (crew_id, attendance_date, start_time, end_time) 
 VALUES (13, '2025-03-06', '09:31:00', '18:01:00');
 ```
+
+---
 
 ## 문제 8: 잘못된 출석 기록 수정 (UPDATE)
 
@@ -83,6 +95,8 @@ SET start_time = '10:00:00'
 WHERE crew_id = 14 AND attendance_date = '2025-03-12';
 ```
 
+---
+
 ## 문제 9: 허위 출석 기록 삭제 (DELETE)
 
 #### 1.
@@ -90,6 +104,8 @@ WHERE crew_id = 14 AND attendance_date = '2025-03-12';
 DELETE FROM attendance 
 WHERE crew_id = 15 AND attendance_date = '2025-03-12';
 `````
+
+---
 
 ## 문제 10: 출석 정보 조회하기 (JOIN)
 
@@ -100,6 +116,8 @@ FROM attendance a
 JOIN crew c ON a.crew_id = c.crew_id;
 ```
 
+---
+
 ## 문제 11: nickname으로 쿼리 처리하기 (서브 쿼리)
 
 #### 1.
@@ -107,6 +125,8 @@ JOIN crew c ON a.crew_id = c.crew_id;
 SELECT * FROM attendance 
 WHERE crew_id = (SELECT crew_id FROM crew WHERE nickname = '검프');
 ```
+
+---
 
 ## 문제 12: 가장 늦게 하교한 크루 찾기
 
@@ -120,6 +140,8 @@ ORDER BY a.end_time DESC
 LIMIT 1;
 ```
 
+---
+
 ## 문제 13: 크루별로 '기록된' 날짜 수 조회
 
 #### 1.
@@ -128,6 +150,8 @@ SELECT crew_id, COUNT(attendance_date) AS total_days
 FROM attendance 
 GROUP BY crew_id;
 ```
+
+---
 
 ## 문제 14: 크루별로 등교 기록이 있는(start_time IS NOT NULL) 날짜 수 조회
 
@@ -139,6 +163,8 @@ WHERE start_time IS NOT NULL
 GROUP BY crew_id;
 ```
 
+---
+
 ## 문제 15: 날짜별로 등교한 크루 수 조회
 
 #### 1.
@@ -148,6 +174,8 @@ FROM attendance
 WHERE start_time IS NOT NULL 
 GROUP BY attendance_date;
 ```
+
+---
 
 ## 문제 16: 크루별 가장 빠른 등교 시각(MIN)과 가장 늦은 등교 시각(MAX)
 
